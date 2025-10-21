@@ -1,0 +1,108 @@
+{
+  "outbounds": [
+    {
+      "type": "http",
+      "tag": "Spain 🇪🇸",
+      "server": "prox-es.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Albania 🇦🇱",
+      "server": "prox-al.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Bermuda 🇧🇲",
+      "server": "prox-bm.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Turkey 🇹🇷",
+      "server": "prox-tr.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Panama 🇵🇦",
+      "server": "prox-pa.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "France 🇫🇷",
+      "server": "prox-es.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Sweden 🇸🇪",
+      "server": "prox-bm.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Any 🏴‍☠️",
+      "server": "prox-se.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Russia 🇷🇺",
+      "server": "prox-ru.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Bulgaria 🇧🇬",
+      "server": "prox-bg.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Argentina 🇦🇷",
+      "server": "prox-ar.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Brazil 🇧🇷",
+      "server": "prox-br.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Canada 🇨🇦",
+      "server": "prox-ca.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    }
+  ]
+}
