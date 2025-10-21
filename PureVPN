@@ -1,1 +1,284 @@
+{
+  "log": {
+    "level": "panic",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://1.1.1.1/dns-query",
+        "address_resolver": "dns_direct",
+        "strategy": "prefer_ipv4",
+        "detour": "ExclaveVirtual"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "local",
+        "strategy": "prefer_ipv4",
+        "detour": "ExclaveVirtual"
+      },
+      {
+        "tag": "direct",
+        "address": "tls://8.8.8.8",
+        "detour": "ExclaveVirtual"
+      },
+      {
+        "tag": "dns_block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      { "outbound": "any", "server": "dns_direct" }
+    ],
+    "final": "dns_proxy",
+    "independent_cache": true
+  },
+  "ntp": {
+    "enabled": true,
+    "server": "ir.pool.ntp.org",
+    "server_port": 123,
+    "detour": "direct"
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 20122,
+      "udp_fragment": true,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "type": "http",
+      "listen": "127.0.0.1",
+      "listen_port": 8181,
+      "udp_fragment": true,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "type": "socks",
+      "listen": "127.0.0.1",
+      "listen_port": 8080,
+      "udp_fragment": true,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "type": "tun",
+      "address": ["172.19.0.1/30", "fdfe:dcba:9876::1/126"],
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "mixed",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 20122
+        }
+      },
+      "sniff": true,
+      "sniff_override_destination": true,
+      "domain_strategy": "ipv4_only"
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "ExclaveVirtual",
+      "outbounds": [
+        "ExclaveVirtual-auto",
+        "Spain 🇪🇸",
+        "Albania 🇦🇱",
+        "Bermuda 🇧🇲",
+        "Turkey 🇹🇷",
+        "Panama 🇵🇦",
+        "France 🇫🇷",
+        "Sweden 🇸🇪",
+        "Any 🏴‍☠️",
+        "Russia 🇷🇺",
+        "Bulgaria 🇧🇬",
+        "Argentina 🇦🇷",
+        "Brazil 🇧🇷",
+        "Canada 🇨🇦"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "ExclaveVirtual-auto",
+      "outbounds": [
+        "Spain 🇪🇸",
+        "Albania 🇦🇱",
+        "Bermuda 🇧🇲",
+        "Turkey 🇹🇷",
+        "Panama 🇵🇦",
+        "France 🇫🇷",
+        "Sweden 🇸🇪",
+        "Any 🏴‍☠️",
+        "Russia 🇷🇺",
+        "Bulgaria 🇧🇬",
+        "Argentina 🇦🇷",
+        "Brazil 🇧🇷",
+        "Canada 🇨🇦"
+      ],
+      "url": "http://1.1.1.1/",
+      "interval": "3m0s"
+    },
 
+    {
+      "type": "http",
+      "tag": "Spain 🇪🇸",
+      "server": "prox-es.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Albania 🇦🇱",
+      "server": "prox-al.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Bermuda 🇧🇲",
+      "server": "prox-bm.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Turkey 🇹🇷",
+      "server": "prox-tr.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Panama 🇵🇦",
+      "server": "prox-pa.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "France 🇫🇷",
+      "server": "prox-es.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Sweden 🇸🇪",
+      "server": "prox-bm.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Any 🏴‍☠️",
+      "server": "prox-se.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Russia 🇷🇺",
+      "server": "prox-ru.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Bulgaria 🇧🇬",
+      "server": "prox-bg.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Argentina 🇦🇷",
+      "server": "prox-ar.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Brazil 🇧🇷",
+      "server": "prox-br.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    },
+    {
+      "type": "http",
+      "tag": "Canada 🇨🇦",
+      "server": "prox-ca.pointtoserver.com",
+      "server_port": 10780,
+      "username": "purevpn0d10722612",
+      "password": "xYXpDIhMLKLqB5"
+    }
+  ],
+  "route": {
+    "rules": [
+      { "inbound": "tun-in", "action": "sniff" },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          { "inbound": "dns-in" },
+          { "port": 53 },
+          { "protocol": "dns" }
+        ],
+        "action": "hijack-dns"
+      },
+      { "clash_mode": "ExclaveVirtual", "outbound": "ExclaveVirtual" },
+      { "network": "tcp", "port": 853, "action": "reject" },
+      { "network": "udp", "port": 443, "action": "reject" },
+      { "inbound": "tun-in", "action": "resolve" },
+      { "ip_cidr": "10.10.34.0/24", "outbound": "ExclaveVirtual" },
+      { "ip_is_private": true, "outbound": "direct" },
+      {
+        "domain_regex": [".*\\.ir$", ".*\\.xn--mgba3a4f16a$"],
+        "outbound": "direct"
+      },
+      { "protocol": "stun", "action": "reject" },
+      {
+        "source_ip_cidr": ["224.0.0.0/3", "ff00::/8"],
+        "ip_cidr": ["224.0.0.0/3", "ff00::/8"],
+        "action": "reject"
+      }
+    ],
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db",
+      "cache_id": "ExclaveVirtual",
+      "store_fakeip": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "default_mode": "ExclaveVirtual",
+      "access_control_allow_origin": "https://yacd.metacubex.one",
+      "access_control_allow_private_network": true
+    }
+  }
+}
